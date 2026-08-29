@@ -6,30 +6,12 @@ Live, hot-reloading Omarchy theme palette for **GNOME Nautilus** (Files).
 
 - **Accent color follows your Omarchy theme** — every `omarchy theme set` instantly re-accents every running libadwaita app (Nautilus, zenity dialogs, gnome-software, etc.) via `org.gnome.desktop.interface accent-color`.
 - **Full palette matches your theme** — Nautilus windows restyle in-place (backgrounds, sidebars, headerbars, buttons, selections) without restart, using a nautilus-python extension that watches a generated CSS file.
-- **Omarchy-native** — installs via `omarchy theme install`, uses Omarchy's hook system, survives `omarchy refresh`.
-
-## Demo
-
-| Moon Orbit (dark) | Catppuccin Latte (light) |
-|:---:|:---:|
-| ![Moon Orbit](backgrounds/preview.png) | ![Catppuccin Latte](backgrounds/preview-unlock.png) |
-
-*(Screenshots auto-generated on theme switch — no Nautilus restart)*
+- **Omarchy-native** — uses Omarchy's hook system, survives `omarchy refresh`.
 
 ## Install
 
-### Option A: As an Omarchy theme (recommended)
-
 ```bash
-omarchy theme install https://github.com/yourname/paint-omarchy-nautilus
-cd ~/.config/omarchy/themes/paint-omarchy-nautilus
-./install.sh
-```
-
-### Option B: Standalone (no theme dependency)
-
-```bash
-git clone https://github.com/yourname/paint-omarchy-nautilus
+git clone https://github.com/JJDizz1L/paint-omarchy-nautilus
 cd paint-omarchy-nautilus
 ./install.sh
 ```
@@ -67,10 +49,7 @@ omarchy theme set <theme>
 
 ```
 paint-omarchy-nautilus/
-├── colors.toml                    # Theme palette (mode, accent, backgrounds...)
-├── icons.theme                    # GTK icon theme (Yaru-purple)
-├── shell.toml                     # Optional bar customizations
-├── backgrounds/                   # Theme wallpapers
+├── colors.toml                    # Default palette (used if no theme active)
 ├── hooks/theme-set.d/
 │   ├── 60-omarchy-gtk-accent.sh   # Maps theme accent → libadwaita enum
 │   └── 70-omarchy-nautilus-palette.sh  # Generates @define-color CSS

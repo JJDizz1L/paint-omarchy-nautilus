@@ -1,7 +1,6 @@
 #!/bin/bash
 # paint-omarchy-nautilus — Install script
-# Run after: omarchy theme install https://github.com/yourname/paint-omarchy-nautilus
-# Or run directly from a local clone: ./install.sh
+# Run from a local clone: ./install.sh
 
 set -euo pipefail
 
@@ -56,9 +55,7 @@ ok "Installation complete!"
 echo
 echo "Next steps:"
 echo "  1. Restart Nautilus (or run 'omarchy theme set <theme>' to activate)"
-echo "  2. Switch themes to see live palette + accent changes:"
-echo "       omarchy theme set catppuccin-latte"
-echo "       omarchy theme set paint-omarchy-nautilus"
+echo "  2. Switch themes to see live palette + accent changes"
 echo
 echo "Files installed:"
 echo "  ~/.config/omarchy/hooks/theme-set.d/60-omarchy-gtk-accent.sh"
