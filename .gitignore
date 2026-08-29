@@ -6,3 +6,4 @@ pkg/pkg/
 pkg/*.tar.zst
 pkg/*.tar.gz
 pkg/.SRCINFO
+.AGENTS
