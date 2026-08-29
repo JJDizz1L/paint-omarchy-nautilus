@@ -1,1 +1,8 @@
 extensions/__pycache__/
+
+# AUR package build artifacts
+pkg/src/
+pkg/pkg/
+pkg/*.tar.zst
+pkg/*.tar.gz
+pkg/.SRCINFO
