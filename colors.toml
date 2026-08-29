@@ -1,0 +1,40 @@
+# Paint Omarchy Nautilus — Theme Palette
+#
+# This theme provides the color palette for the GTK/libadwaita integration.
+# It can be used standalone or layered on top of another Omarchy theme.
+# Run `omarchy theme set paint-omarchy-nautilus` to activate.
+
+mode = "dark"
+
+# Core palette
+background = "#1e1e2e"
+foreground = "#cdd6f4"
+
+# Background variants (for surfaces, sidebars, cards, etc.)
+dark_background = "#181825"
+darker_background = "#11111b"
+lighter_background = "#313244"
+
+# Accent color (mapped to nearest libadwaita accent: blue/teal/green/yellow/orange/red/pink/purple/slate)
+accent = "#89b4fa"
+
+# Semantic colors
+muted = "#6c7086"
+selection = "#45475a"
+
+red = "#f38ba8"
+green = "#a6e3a1"
+yellow = "#f9e2af"
+blue = "#89b4fa"
+magenta = "#f5c2e7"
+cyan = "#94e2d5"
+orange = "#fab387"
+brown = "#eba0ac"
+
+# Terminal colors (for consistency with Omarchy terminal themes)
+terminal_colors = [
+  "#1e1e2e", "#f38ba8", "#a6e3a1", "#f9e2af",
+  "#89b4fa", "#f5c2e7", "#94e2d5", "#cdd6f4",
+  "#6c7086", "#f38ba8", "#a6e3a1", "#f9e2af",
+  "#89b4fa", "#f5c2e7", "#94e2d5", "#cdd6f4"
+]

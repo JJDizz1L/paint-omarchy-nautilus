@@ -1,0 +1,13 @@
+# Paint Omarchy Nautilus — Shell/Bar Integration
+#
+# Optional bar customizations. If you don't want bar changes, delete this file.
+# The theme installer will copy this to the staged theme and omarchy-shell will hot-reload.
+
+[bar]
+# Example: add a small indicator when Nautilus palette is active
+# widgets = ["omarchy.workspaces", "omarchy.clock", "paint.nautilus-indicator"]
+
+# [widgets.paint.nautilus-indicator]
+# type = "label"
+# text = "🎨"
+# tooltip = "Omarchy → Nautilus palette active"
