@@ -1,8 +1,10 @@
 # paint-omarchy-nautilus
 
 Live, hot-reloading Omarchy theme palette for **GNOME Nautilus** (Files).
-https://github.com/user-attachments/assets/4a67638c-3324-43b6-909e-69f4ec8375d1
+<img width="360" height="203" alt="2026-08-29_20-09-42_trimmed (1)" src="https://github.com/user-attachments/assets/1ee943b8-6767-4b41-acab-a7f7aef00d0d" />
+
 ## What it does
+
 
 - **Accent color follows your Omarchy theme** — every `omarchy theme set` instantly re-accents every running libadwaita app (Nautilus, zenity dialogs, gnome-software, etc.) via `org.gnome.desktop.interface accent-color`.
 - **Full palette matches your theme** — Nautilus windows restyle in-place (backgrounds, sidebars, headerbars, buttons, selections) without restart, using a nautilus-python extension that watches a generated CSS file.
