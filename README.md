@@ -78,17 +78,63 @@ Loaded by `nautilus-python` inside the Nautilus process. Installs a `Gtk.CssProv
 
 ## Uninstall
 
+### AUR Package (`yay -R paint-omarchy-nautilus`)
+
+**Automatically removed by pacman:**
+- `/usr/share/paint-omarchy-nautilus/` (system hooks, bootstrap script)
+- `/usr/share/nautilus-python/extensions/omarchy_palette.py` (system extension)
+- `/usr/lib/systemd/user/paint-omarchy-nautilus-bootstrap.service`
+- `/usr/share/licenses/paint-omarchy-nautilus/`
+
+**Preserved (user data — not removed by package manager):**
+- `~/.config/omarchy/hooks/theme-set.d/60-omarchy-gtk-accent.sh`
+- `~/.config/omarchy/hooks/theme-set.d/70-omarchy-nautilus-palette.sh`
+- `~/.cache/omarchy/gtk/nautilus.css` (generated palette)
+- Any running Nautilus processes (extension stays loaded until restart)
+
+**Run after AUR removal for full cleanup:**
 ```bash
-# Remove hooks
-rm ~/.config/omarchy/hooks/theme-set.d/60-omarchy-gtk-accent.sh
-rm ~/.config/omarchy/hooks/theme-set.d/70-omarchy-nautilus-palette.sh
+# 1. Disable systemd service
+systemctl --user disable --now paint-omarchy-nautilus-bootstrap 2>/dev/null
 
-# Remove extension
-rm ~/.local/share/nautilus-python/extensions/omarchy_palette.py
+# 2. Remove user hooks
+rm -f ~/.config/omarchy/hooks/theme-set.d/60-omarchy-gtk-accent.sh
+rm -f ~/.config/omarchy/hooks/theme-set.d/70-omarchy-nautilus-palette.sh
 
-# Optionally remove packages
+# 3. Clear generated CSS cache
+rm -f ~/.cache/omarchy/gtk/nautilus.css
+
+# 4. Restart Nautilus to unload extension
+nautilus -q && nautilus &
+
+# 5. Optionally remove packages (keeps nautilus if you use it)
+pkexec pacman -R nautilus-python
+```
+
+### Manual Install (git clone + `./install.sh`)
+
+**Run for full cleanup:**
+```bash
+# 1. Remove user hooks
+rm -f ~/.config/omarchy/hooks/theme-set.d/60-omarchy-gtk-accent.sh
+rm -f ~/.config/omarchy/hooks/theme-set.d/70-omarchy-nautilus-palette.sh
+
+# 2. Remove extension
+rm -f ~/.local/share/nautilus-python/extensions/omarchy_palette.py
+
+# 3. Clear generated CSS cache
+rm -f ~/.cache/omarchy/gtk/nautilus.css
+
+# 4. Restart Nautilus to unload extension
+nautilus -q && nautilus &
+
+# 5. Optionally remove packages
 pkexec pacman -R nautilus-python  # keep nautilus if you use it
 ```
+
+### Transparency Note
+
+Per Arch/Omarchy conventions, **user configuration in `~/.config/` and `~/.local/share/` is never automatically removed** by package managers or install scripts — it's owned by you. This ensures your customizations survive updates and reinstalls. The commands above let you explicitly opt in to full removal.
 
 ## License
 
