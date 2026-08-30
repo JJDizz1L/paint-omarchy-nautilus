@@ -15,6 +15,12 @@ Live, hot-reloading Omarchy theme palette for **GNOME Nautilus** (Files).
 ```bash
 yay -S paint-omarchy-nautilus
 ```
+## Enable (if Nautilus is already running)
+
+```bash
+systemctl --user enable --now paint-omarchy-nautilus-bootstrap && nautilus -q && nautilus &
+```
+
 OR manually:
 ```bash
 git clone https://github.com/JJDizz1L/paint-omarchy-nautilus
